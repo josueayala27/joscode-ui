@@ -1000,29 +1000,12 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@joscode/ui@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@joscode/ui/-/ui-0.0.1.tgz#75b823aad694a2f1673a3745ec67b2c3d55fef90"
-  integrity sha512-fH/Xpcwurhpc05Ewz+AR1Ioy7XVCAMBjFLRVsIC51kxy2uskybg5bY7p7kJsL4b4MBoXjkJ5FlaA4hQHMajHWw==
+"@joscode/ui@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@joscode/ui/-/ui-0.0.5.tgz#bb465706d8f151bb399dfa8c4133c819176239a0"
+  integrity sha512-yfT0T5nu9K1VP4PFcj2RDfujvyR867VIyDv5kwxXEru9w90HLCcEPPb1xT024Rf/vmXmb+fPDt36OG0Bon5ehg==
   dependencies:
-    core-js "^3.8.3"
-    vue "^2.6.14"
-
-"@joscode/ui@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@joscode/ui/-/ui-0.0.2.tgz#a5965afd2d5f452587c6db0dafffbf1c95c6cc9c"
-  integrity sha512-MsPruFmr/dMaaQsGdSu221JFNhNVSR9DEZJmaQoUGC5COH2DN4WZCugVSaQTq8B4czuD4mNs3JVIcdP5WjT0BA==
-  dependencies:
-    "@joscode/ui" "^0.0.1"
-    core-js "^3.8.3"
-    vue "^2.6.14"
-
-"@joscode/ui@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@joscode/ui/-/ui-0.0.3.tgz#943a0ba5aa84df8efa8a8e826607e2a8b35e9711"
-  integrity sha512-LSTVub11648fgIbTVIj1gFO73C1vzvU6TD+gSjBmzAmljTGikwyauQIhmSSdZA4/8yCH8QlHQ+Ok02tziUBIGg==
-  dependencies:
-    "@joscode/ui" "^0.0.2"
+    "@joscode/ui" "^0.0.5"
     core-js "^3.8.3"
     vue "^2.6.14"
 

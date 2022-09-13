@@ -1,7 +1,7 @@
 <template>
   <span
     @click="$emit('click')"
-    class="px-3 py-2 bg-green-500 hover:bg-green-600 text-white text-sm cursor-pointer transition-all duration-300"
+    class="px-[6px] py-[4px] bg-green-100 text-green-500 rounded-md text-sm transition-all duration-300"
   >
     <slot />
   </span>
