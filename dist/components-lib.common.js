@@ -66,16 +66,13 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=template&id=05ada6fc&
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=template&id=6472f21c&
 var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
   return _c('div', {
-    staticClass: "overflow-x-auto",
-    on: {
-      "scroll": _vm.doScroll
-    }
+    staticClass: "overflow-x-auto"
   }, [_c('div', {
     staticClass: "table"
   }, [_c('div', {
@@ -86,11 +83,8 @@ var render = function render() {
       ref: `header-${i}`,
       refInFor: true,
       staticClass: "px-3 py-2 table-cell bg-gray-100",
-      class: {
-        'shadow-2xl': column.sticky === 'left' && _vm.shadows.left
-      },
       style: [{
-        [column.sticky]: _vm.getOffset(_vm.widths[i], [column.sticky]) + 'px',
+        [column.sticky]: _vm.getOffset(_vm.offset[i], [column.sticky]) + 'px',
         position: column.sticky ? 'sticky' : ''
       }]
     }, [_vm._v(" " + _vm._s(column.title) + " ")]);
@@ -102,11 +96,8 @@ var render = function render() {
       return _c('div', {
         key: i,
         staticClass: "px-3 py-2 table-cell align-middle whitespace-nowrap bg-white transition-all duration-300",
-        class: {
-          'shadow-right': column.sticky === 'left' && _vm.shadows.left
-        },
         style: [{
-          [column.sticky]: _vm.getOffset(_vm.widths[i], [column.sticky]) + 'px',
+          [column.sticky]: _vm.getOffset(_vm.offset[i], [column.sticky]) + 'px',
           position: column.sticky ? 'sticky' : ''
         }]
       }, [_vm._t(column.field, function () {
@@ -123,21 +114,18 @@ var staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=script&lang=js&
 /* harmony default export */ var Tablevue_type_script_lang_js_ = ({
-  name: "JosTableComponent",
-  props: ["data", "columns"],
+  name: 'JosTableComponent',
+  props: ['data', 'columns'],
 
   data() {
     return {
-      widths: [],
-      shadows: {
-        left: false
-      }
+      offset: []
     };
   },
 
   mounted() {
     Object.keys(this.$refs).forEach(el => {
-      this.widths.push({
+      this.offset.push({
         left: this.$refs[el][0].previousSibling?.clientWidth || 0,
         right: this.$refs[el][0].nextSibling?.clientWidth || 0
       });
@@ -145,13 +133,7 @@ var staticRenderFns = [];
   },
 
   methods: {
-    getOffset: (a, b) => a?.[b],
-
-    doScroll() {// console.log(event.target.scrollWidth);
-      // if (event.target.scrollLeft) this.shadows.left = true;
-      // else this.shadows.left = false;
-    }
-
+    getOffset: (a, b) => a?.[b]
   }
 });
 ;// CONCATENATED MODULE: ./packages/components/Table.vue?vue&type=script&lang=js&
@@ -274,8 +256,8 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var Table = (component.exports);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Badge.vue?vue&type=template&id=04493410&
-var Badgevue_type_template_id_04493410_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Badge.vue?vue&type=template&id=63a60448&
+var Badgevue_type_template_id_63a60448_render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
@@ -289,11 +271,11 @@ var Badgevue_type_template_id_04493410_render = function render() {
   }, [_vm._t("default")], 2);
 };
 
-var Badgevue_type_template_id_04493410_staticRenderFns = [];
+var Badgevue_type_template_id_63a60448_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Badge.vue?vue&type=script&lang=js&
 /* harmony default export */ var Badgevue_type_script_lang_js_ = ({
-  name: "JosBadgeComponent"
+  name: 'JosBadgeComponent'
 });
 ;// CONCATENATED MODULE: ./packages/components/Badge.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_Badgevue_type_script_lang_js_ = (Badgevue_type_script_lang_js_); 
@@ -307,8 +289,8 @@ var Badgevue_type_template_id_04493410_staticRenderFns = [];
 ;
 var Badge_component = normalizeComponent(
   components_Badgevue_type_script_lang_js_,
-  Badgevue_type_template_id_04493410_render,
-  Badgevue_type_template_id_04493410_staticRenderFns,
+  Badgevue_type_template_id_63a60448_render,
+  Badgevue_type_template_id_63a60448_staticRenderFns,
   false,
   null,
   null,

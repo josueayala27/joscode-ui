@@ -17,7 +17,7 @@
     "pub": "npx build && npx publish"
   },
   "dependencies": {
-    "@joscode/ui": "^0.0.5",
+    "@joscode/ui": "^0.0.15",
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
   },
