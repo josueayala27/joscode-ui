@@ -76,7 +76,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=template&id=6472f21c&
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=template&id=3d240444&
 var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
@@ -90,13 +90,14 @@ var render = function render() {
   }, _vm._l(_vm.columns, function (column, i) {
     return _c('div', {
       key: i,
-      ref: `header-${i}`,
-      refInFor: true,
       staticClass: "px-3 py-2 table-cell bg-gray-100",
       style: [{
         [column.sticky]: _vm.getOffset(_vm.offset[i], [column.sticky]) + 'px',
         position: column.sticky ? 'sticky' : ''
-      }]
+      }],
+      attrs: {
+        "id": `table-header-${i + 1}`
+      }
     }, [_vm._v(" " + _vm._s(column.title) + " ")]);
   }), 0), _vm._l(_vm.data, function (item, j) {
     return _c('div', {
@@ -134,10 +135,11 @@ var staticRenderFns = [];
   },
 
   mounted() {
-    Object.keys(this.$refs).forEach(el => {
+    this.columns.forEach((_, i) => {
+      const header = document.getElementById(`table-header-${i + 1}`);
       this.offset.push({
-        left: this.$refs[el][0].previousSibling?.clientWidth || 0,
-        right: this.$refs[el][0].nextSibling?.clientWidth || 0
+        left: header.previousSibling?.clientWidth ?? 0,
+        right: header.nextSibling?.clientWidth ?? 0
       });
     });
   },

@@ -10,7 +10,7 @@
               position: column.sticky ? 'sticky' : '',
             },
           ]"
-          :ref="`header-${i}`"
+          :id="`table-header-${i + 1}`"
           class="px-3 py-2 table-cell bg-gray-100"
           v-for="(column, i) in columns"
           :key="i">
@@ -52,12 +52,13 @@ export default {
     };
   },
   mounted() {
-    Object.keys(this.$refs).forEach((el) => {
+    this.columns.forEach((_, i) => {
+      const header = document.getElementById(`table-header-${i + 1}`);
       this.offset.push({
-        left: this.$refs[el][0].previousSibling?.clientWidth || 0,
-        right: this.$refs[el][0].nextSibling?.clientWidth || 0,
+        left: header.previousSibling?.clientWidth ?? 0,
+        right: header.nextSibling?.clientWidth ?? 0,
       });
-    });
+    })
   },
   methods: {
     getOffset: (a, b) => a?.[b],
