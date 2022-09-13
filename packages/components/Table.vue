@@ -6,7 +6,7 @@
         <div
           :style="[
             {
-              [column.sticky]: widths[i]?.[column.sticky] + 'px',
+              [column.sticky]: getOffset(widths[i], [column.sticky]) + 'px',
               position: column.sticky ? 'sticky' : '',
             },
           ]"
@@ -27,7 +27,7 @@
         <div
           :style="[
             {
-              [column.sticky]: widths[i]?.[column.sticky] + 'px',
+              [column.sticky]: getOffset(widths[i], [column.sticky]) + 'px',
               position: column.sticky ? 'sticky' : '',
             },
           ]"
@@ -68,7 +68,8 @@ export default {
     });
   },
   methods: {
-    doScroll(event) {
+    getOffset: (a, b) => a?.[b],
+    doScroll() {
       // console.log(event.target.scrollWidth);
       // if (event.target.scrollLeft) this.shadows.left = true;
       // else this.shadows.left = false;
