@@ -1,6 +1,6 @@
 {
   "name": "@joscode/ui",
-  "version": "0.0.22",
+  "version": "0.0.24",
   "description": "A Component Library for Vue 2",
   "author": "Josué Ayala",
   "private": false,
