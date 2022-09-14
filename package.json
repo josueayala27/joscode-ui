@@ -1,15 +1,15 @@
 {
   "name": "@joscode/ui",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "A Component Library for Vue 2",
   "author": "Josué Ayala",
   "private": false,
   "files": [
     "dist"
   ],
-  "main": "dist/components-lib.common.js.map",
-  "unpkg": "dist/components-lib.common.js.map",
-  "jsdelivr": "dist/components-lib.common.js.map",
+  "main": "dist/components-lib.common.js",
+  "unpkg": "dist/components-lib.common.js",
+  "jsdelivr": "dist/components-lib.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:global": "vue-cli-service build",
