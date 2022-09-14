@@ -7,9 +7,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/components-lib.common.js",
-  "unpkg": "dist/components-lib.common.js",
-  "jsdelivr": "dist/components-lib.common.js",
+  "main": "dist/components-lib.common.js.map",
+  "unpkg": "dist/components-lib.common.js.map",
+  "jsdelivr": "dist/components-lib.common.js.map",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:global": "vue-cli-service build",

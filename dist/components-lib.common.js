@@ -66,7 +66,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=template&id=09f49415&
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=template&id=9da5fb16&
 var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
@@ -82,7 +82,7 @@ var render = function render() {
       key: i,
       staticClass: "px-3 py-2 table-cell bg-gray-100",
       style: [{
-        [column.sticky]: _vm.getOffset(_vm.offset[i], [column.sticky]) + 'px',
+        [column.sticky]: _vm.getRowOffset(_vm.offset[i], [column.sticky]) + 'px',
         position: column.sticky ? 'sticky' : ''
       }],
       attrs: {
@@ -98,7 +98,7 @@ var render = function render() {
         key: i,
         staticClass: "px-3 py-2 table-cell align-middle whitespace-nowrap bg-white transition-all duration-300",
         style: [{
-          [column.sticky]: _vm.getOffset(_vm.offset[i], [column.sticky]) + 'px',
+          [column.sticky]: _vm.getRowOffset(_vm.offset[i], [column.sticky]) + 'px',
           position: column.sticky ? 'sticky' : ''
         }]
       }, [_vm._t(column.field, function () {
@@ -129,7 +129,7 @@ var staticRenderFns = [];
   },
 
   methods: {
-    getOffset: (a, b) => a?.[b]
+    getRowOffset: (a, b) => a?.[b]
   }
 });
 ;// CONCATENATED MODULE: ./packages/components/Table.vue?vue&type=script&lang=js&

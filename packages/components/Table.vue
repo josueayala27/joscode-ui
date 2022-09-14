@@ -6,7 +6,7 @@
         <div
           :style="[
             {
-              [column.sticky]: getOffset(offset[i], [column.sticky]) + 'px',
+              [column.sticky]: getRowOffset(offset[i], [column.sticky]) + 'px',
               position: column.sticky ? 'sticky' : '',
             },
           ]"
@@ -26,7 +26,7 @@
         <div
           :style="[
             {
-              [column.sticky]: getOffset(offset[i], [column.sticky]) + 'px',
+              [column.sticky]: getRowOffset(offset[i], [column.sticky]) + 'px',
               position: column.sticky ? 'sticky' : '',
             },
           ]"
@@ -55,7 +55,7 @@ export default {
     console.log('Mounted component')
   },
   methods: {
-    getOffset: (a, b) => a?.[b],
+    getRowOffset: (a, b) => a?.[b],
   },
 };
 </script>
