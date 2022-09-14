@@ -52,13 +52,7 @@ export default {
     };
   },
   mounted() {
-    this.columns.forEach((_, i) => {
-      const header = document.getElementById(`table-header-${i + 1}`);
-      this.offset.push({
-        left: header.previousSibling?.clientWidth ?? 0,
-        right: header.nextSibling?.clientWidth ?? 0,
-      });
-    })
+    console.log('Mounted component')
   },
   methods: {
     getOffset: (a, b) => a?.[b],
