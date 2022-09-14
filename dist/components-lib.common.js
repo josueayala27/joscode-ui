@@ -66,13 +66,18 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=template&id=9da5fb16&
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/components/Table.vue?vue&type=template&id=6be1fcca&
 var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
   return _c('div', {
-    staticClass: "overflow-x-auto"
+    staticClass: "overflow-x-auto",
+    on: {
+      "scroll": function ($event) {
+        return _vm.onScroll($event);
+      }
+    }
   }, [_c('div', {
     staticClass: "table"
   }, [_c('div', {
@@ -80,6 +85,8 @@ var render = function render() {
   }, _vm._l(_vm.columns, function (column, i) {
     return _c('div', {
       key: i,
+      ref: `header-${i}`,
+      refInFor: true,
       staticClass: "px-3 py-2 table-cell bg-gray-100",
       style: [{
         [column.sticky]: _vm.getRowOffset(_vm.offset[i], [column.sticky]) + 'px',
@@ -125,11 +132,22 @@ var staticRenderFns = [];
   },
 
   mounted() {
-    console.log('Mounted component');
+    Object.keys(this.$refs).forEach(el => {
+      var _this$$refs$el$0$prev, _this$$refs$el$0$next;
+
+      this.offset.push({
+        left: ((_this$$refs$el$0$prev = this.$refs[el][0].previousSibling) === null || _this$$refs$el$0$prev === void 0 ? void 0 : _this$$refs$el$0$prev.clientWidth) || 0,
+        right: ((_this$$refs$el$0$next = this.$refs[el][0].nextSibling) === null || _this$$refs$el$0$next === void 0 ? void 0 : _this$$refs$el$0$next.clientWidth) || 0
+      });
+    });
   },
 
   methods: {
-    getRowOffset: (a, b) => a?.[b]
+    getRowOffset: (a, b) => a === null || a === void 0 ? void 0 : a[b],
+
+    onScroll() {//
+    }
+
   }
 });
 ;// CONCATENATED MODULE: ./packages/components/Table.vue?vue&type=script&lang=js&
@@ -302,11 +320,11 @@ var Badge_component = normalizeComponent(
 
 
 const install = Vue => {
-  Vue.component("JosTable", Table);
-  Vue.component("JosBadge", Badge);
+  Vue.component('JosTable', Table);
+  Vue.component('JosBadge', Badge);
 };
 
-if (typeof window !== "undefined" && window.Vue) {
+if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 

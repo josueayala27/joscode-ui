@@ -1,9 +1,10 @@
 <template>
-  <div class="overflow-x-auto">
+  <div @scroll="onScroll($event)" class="overflow-x-auto">
     <div class="table">
       <!-- Table header -->
       <div class="table-row">
         <div
+          :ref="`header-${i}`"
           :style="[
             {
               [column.sticky]: getRowOffset(offset[i], [column.sticky]) + 'px',
@@ -52,10 +53,18 @@ export default {
     };
   },
   mounted() {
-    console.log('Mounted component')
+    Object.keys(this.$refs).forEach((el) => {
+      this.offset.push({
+        left: this.$refs[el][0].previousSibling?.clientWidth || 0,
+        right: this.$refs[el][0].nextSibling?.clientWidth || 0,
+      });
+    });
   },
   methods: {
     getRowOffset: (a, b) => a?.[b],
+    onScroll() {
+      //
+    }
   },
 };
 </script>
